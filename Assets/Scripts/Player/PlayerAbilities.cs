@@ -12,6 +12,8 @@ public class PlayerAbilities : MonoBehaviour
     public MeshRenderer mesh;
     public GameObject bubbleShield;
 
+    InputManager inputManager;
+
 
     private float nextAbilityTime;
 
@@ -19,16 +21,20 @@ public class PlayerAbilities : MonoBehaviour
     {
         hatObject = playerStats.hatObject;
         GetComponent<MeshRenderer>();
+        inputManager = FindObjectOfType<InputManager>();
     }
     // Update is called once per frame
     void Update()
     {
         CheckAbilities();
-
         CheckCooldowns();
-
     }
 
+
+    public void Reset()
+    {
+        hatObject = playerStats.hatObject;
+    }
 
     void CheckCooldowns()
     {
@@ -40,22 +46,22 @@ public class PlayerAbilities : MonoBehaviour
         switch (hatObject.abilityNumber)
         {
             default:
-                
                 break;
             case 1:
-                if(gun.shooting == true)
+                if(Time.time > nextAbilityTime)
                 {
-                    mesh.enabled = true;
-                }
-                else if (gun.shooting == false)
-                {
-                    mesh.enabled = false;
+                    if (inputManager.Interact)
+                    {
+                        mesh.enabled = false;
+                        nextAbilityTime = Time.time + hatObject.abilityCooldown;
+                        Invoke("resetAbility", hatObject.abilityDuration);
+                    }
                 }
                 break;
             case 2:
                 if(Time.time > nextAbilityTime)
                 {
-                    if (Input.GetKey("e"))
+                    if (inputManager.Interact)
                     {
                         GameObject clone = (GameObject)Instantiate(bubbleShield, transform.position, transform.rotation);
                         nextAbilityTime = Time.time + hatObject.abilityCooldown;
@@ -67,5 +73,10 @@ public class PlayerAbilities : MonoBehaviour
         }
             
 
+    }
+
+    public void resetAbility()
+    {
+        mesh.enabled = true;
     }
 }

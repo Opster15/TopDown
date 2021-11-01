@@ -7,16 +7,22 @@ public class StageOrderGenerator : MonoBehaviour
 
     public GameObject[] stages;
     public GameObject stage;
-    public int random;
+    public GameObject clone;
+    
+    int random;
 
     private void Awake()
     {
         random = Random.Range(0, stages.Length);
         stage = stages[random];
+        clone = (GameObject)Instantiate(stage, transform.position, transform.rotation);
     }
 
-    private void Start()
+    public void Reset()
     {
-        GameObject clone = (GameObject)Instantiate(stage, transform.position, transform.rotation);
+        Destroy(clone);
+        random = Random.Range(0, stages.Length);
+        stage = stages[random];
+        clone = (GameObject)Instantiate(stage, transform.position, transform.rotation);
     }
 }

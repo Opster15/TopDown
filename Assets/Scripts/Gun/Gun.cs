@@ -10,12 +10,14 @@ public class Gun : MonoBehaviour
     public GameObject[] bulletObjects;
     public GameObject bullet;
 
+    InputManager inputManager;
+
     int bulletsLeft, bulletsShot;
 
     public Transform player;
-    public Rigidbody playerRb;
+    private Rigidbody playerRb;
 
-    public int random, random2;
+    private int random, random2;
 
     //bools
     bool readyToShoot, reloading;
@@ -27,22 +29,32 @@ public class Gun : MonoBehaviour
     public GameObject muzzleFlash;
 
     //bug fixing :D
-    public bool allowInvoke = true;
+    private bool allowInvoke = true;
 
 
     public void Start()
     {
-        
+        bulletsLeft = gunObject.magazineSize;
+        readyToShoot = true;
+        inputManager = FindObjectOfType<InputManager>();
     }
     private void Awake()
     {
+        playerRb = GetComponentInParent<Rigidbody>();
         random2 = Random.Range(0, bulletObjects.Length);
         bullet = bulletObjects[random2];
         random = Random.Range(0, gunObjects.Length);
         gunObject = gunObjects[random];
-        //make sure magazine is full
-        bulletsLeft = gunObject.magazineSize;
-        readyToShoot = true;
+        
+    }
+
+    public void Reset()
+    {
+        playerRb = GetComponentInParent<Rigidbody>();
+        random2 = Random.Range(0, bulletObjects.Length);
+        bullet = bulletObjects[random2];
+        random = Random.Range(0, gunObjects.Length);
+        gunObject = gunObjects[random];
     }
 
     private void Update()
@@ -52,8 +64,8 @@ public class Gun : MonoBehaviour
     private void MyInput()
     {
         //Check if allowed to hold down button and take corresponding input
-        if (gunObject.allowButtonHold) shooting = Input.GetKey(KeyCode.Mouse0);
-        else shooting = Input.GetKeyDown(KeyCode.Mouse0);
+        if (gunObject.allowButtonHold) shooting = inputManager.LeftClick;
+        else shooting = inputManager.LeftClickPressed;
 
 
 

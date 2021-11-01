@@ -15,7 +15,10 @@ MonoBehaviour:
   maxHealth: 50
   moveSpeed: 25000
   maxSpeed: 15
+  counterMovement: 0.8
   dashCooldown: 3
   dashForce: 150000
-  invisibility: 0
   playerScale: {x: 0.7, y: 0.7, z: 0.7}
+  abilityCooldown: 0
+  abilityDuration: 0
+  abilityNumber: 0

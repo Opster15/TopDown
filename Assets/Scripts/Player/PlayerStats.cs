@@ -6,20 +6,28 @@ public class PlayerStats : MonoBehaviour
 {
     public HatObject[] hatObjects;
     public HatObject hatObject;
-    public Manager manager;
+    //public GameObject[] hatPrefabs;
+    //public GameObject hatPrefab;
+    Manager manager;
+    InputManager inputManager;
  
-    private int random;
+    private int random, random2;
     //public HealthBar healthBar;
     public int currentHealth;
+
+    public Transform hatHolder;
 
     private bool inZone;
 
 
     public void Awake()
     {
-
+        manager = FindObjectOfType<Manager>();
+        inputManager = FindObjectOfType<InputManager>();
         random = Random.Range(0, hatObjects.Length);
         hatObject = hatObjects[random];
+        //random2 = Random.Range(0, hatPrefabs.Length);
+        //hatPrefab = hatPrefabs[random2];
 
         currentHealth = hatObject.maxHealth;
         //healthBar.SetMaxHealth(maxHealth);
@@ -28,32 +36,43 @@ public class PlayerStats : MonoBehaviour
 
         transform.localScale = hatObject.playerScale;
 
-
-
+        //hatPrefab = Instantiate(hatPrefab, hatHolder.position, hatHolder.rotation);
+        //hatPrefab.transform.parent = hatHolder;
     }
 
 
+    public void Reset()
+    {
+        random = Random.Range(0, hatObjects.Length);
+        hatObject = hatObjects[random];
+        //random2 = Random.Range(0, hatPrefabs.Length);
+        //hatPrefab = hatPrefabs[random2];
+
+        currentHealth = hatObject.maxHealth;
+        transform.localScale = hatObject.playerScale;
+    }
+
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.L))
+        if (inputManager.spacePressed)
         {
-            TakeDamage(20);
+            TakeDamage(150);
         }
 
         if(currentHealth <= 0)
         {
             manager.Reset();
+            currentHealth = hatObject.maxHealth;
         }
 
     }
     
     public void TakeDamage(int damage)
-        {
+    {
         currentHealth -= damage;
-        }
+    }
 
     #region Zone
-
     void ZoneDamage()
     {
         if(inZone == false)
@@ -62,8 +81,6 @@ public class PlayerStats : MonoBehaviour
         }
         
     }
-
-    
 
     void OnTriggerExit(Collider col)
     { 
@@ -80,6 +97,5 @@ public class PlayerStats : MonoBehaviour
             inZone = true;
         }
     }
-
     #endregion
 }

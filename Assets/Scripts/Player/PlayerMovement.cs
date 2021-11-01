@@ -6,25 +6,28 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public HatObject hatObject;
-    public PlayerStats playerStats;
+    PlayerStats playerStats;
     public Transform orientation;
     public Transform player;
     public GameObject crosshair;
 
+    InputManager inputManager;
 
     //Other
     private Rigidbody rb;
     private float nextDashTime;
 
+    Vector3 resetPosition;
+
     //Movement
     private bool grounded;
     public LayerMask whatIsGround;
 
-    public float counterMovement = 0.8f;
     private float threshold = 0.01f;
-    public float maxSlopeAngle = 35f;
+    private float maxSlopeAngle = 35f;
+    public float counterMovement;
 
-    private bool isMoving;
+    public bool isMoving;
 
 
     //Input
@@ -33,51 +36,53 @@ public class PlayerMovement : MonoBehaviour
     void Awake()
     {
         rb = GetComponentInChildren<Rigidbody>();
-        hatObject = playerStats.hatObject;
+        playerStats = GetComponent<PlayerStats>();
+        resetPosition = player.position;
+        inputManager = FindObjectOfType<InputManager>();
     }
 
     void Start()
     {
-        Cursor.visible = false;
+        hatObject = playerStats.hatObject;        
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Confined;
     }
+
+    public void Reset()
+    {
+        player.position = resetPosition;
+        hatObject = playerStats.hatObject;
+    }
+
 
     private void FixedUpdate()
     {        
         Movement();
-        Cursor.visible = true;
-        Cursor.lockState = CursorLockMode.Confined;
+
     }
 
     private void Update()
     {
         MyInput();
         LookAtMouse();
-        Dash();
+        //Dash();
     }
 
     private void MyInput()
     {
-        x = Input.GetAxisRaw("Horizontal");
-        y = Input.GetAxisRaw("Vertical");
+        x = inputManager.m_movementInput.x;
+        y = inputManager.m_movementInput.y;
 
-        if(x == 0)
-        {
-            if(y == 0)
-            {
-                isMoving = false;
-            }
-            else
-            {
-                isMoving = true;
-            }
-            
-        }
-        else
+        if(x == 0 && y == 0)
         {
             isMoving = false;
         }
+        else if(x != 0 && y != 0)
+        {
+            isMoving = true;
+        }
     }
-
+    /*
     public void Dash()
     {
         Vector3 moveDir = new Vector3(-y, 0, x).normalized;
@@ -92,11 +97,12 @@ public class PlayerMovement : MonoBehaviour
         }
 
     }
+    */
 
     void LookAtMouse()
     {
         Plane playerplane = new Plane(Vector3.up, transform.position);
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Ray ray = Camera.main.ScreenPointToRay(inputManager.m_mousePositionInput);
         float hitdist = 0.0f;
 
         if (playerplane.Raycast(ray, out hitdist))

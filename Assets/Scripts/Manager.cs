@@ -7,16 +7,43 @@ public class Manager : MonoBehaviour
 {
 
     public GameObject cursor;
+    public StageOrderGenerator stageOrderGen;
+    Gun gun;
+    PlayerStats playerStats;
+    PlayerAbilities playerAbilities;
+    DeathZone deathZone;
+    PlayerMovement playerMovement;
 
 
-    public void Update()
+    GameObject[] bullets;
+
+    public Vector3 resetPosition;
+
+    private void Awake()
     {
-        
+        playerStats = FindObjectOfType<PlayerStats>();
+        gun = FindObjectOfType<Gun>();
+        deathZone = FindObjectOfType<DeathZone>();
+        playerMovement = FindObjectOfType<PlayerMovement>();
+        playerAbilities = FindObjectOfType<PlayerAbilities>();
     }
+
 
     public void Reset()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        stageOrderGen.Reset();
+        gun.Reset();
+        playerStats.Reset();
+        deathZone.Reset();
+        playerMovement.Reset();
+        playerAbilities.Reset();
+
+        bullets = GameObject.FindGameObjectsWithTag("Bullet");
+        for(int i = 0; i < bullets.Length; i++)
+        {
+            Destroy(bullets[i].gameObject);
+        }
+
     }
 
 
