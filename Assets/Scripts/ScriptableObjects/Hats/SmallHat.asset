@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: SmallHat
   m_EditorClassIdentifier: 
   maxHealth: 50
+  movementMultiplier: 1
   moveSpeed: 25000
   maxSpeed: 15
-  counterMovement: 0.8
   dashCooldown: 3
   dashForce: 150000
   playerScale: {x: 0.7, y: 0.7, z: 0.7}

@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 6815729652951326705}
   - component: {fileID: 4828710604209735477}
   - component: {fileID: 7049018593405894391}
-  m_Layer: 6
-  m_Name: BaseBullet
+  m_Layer: 11
+  m_Name: WallIgnoreBullet
   m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -142,7 +142,7 @@ MonoBehaviour:
   maxLifetime: 3
   shootForce: 0
   mass: 0.5
-  doesCollide: 1
+  doesCollide: 0
   followingCursor: 0
   maxCollisions: 0
   explodeOnTouch: 1

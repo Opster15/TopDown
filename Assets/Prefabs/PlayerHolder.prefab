@@ -403,7 +403,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d6d134c98ebcfe944b4c0bc12e638e30, type: 2}
   - {fileID: 11400000, guid: 711bc116e35886a4a89a570ba074fe5a, type: 2}
   hatObject: {fileID: 0}
-  manager: {fileID: 0}
   currentHealth: 0
   hatHolder: {fileID: 6928650095400215661}
 --- !u!114 &6928650094532053176
@@ -418,7 +417,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d55c82f9753c474e9f205351b039b47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hatObject: {fileID: 11400000, guid: 6c55cee322d9770439c4b0287d2af7ac, type: 2}
+  hatObject: {fileID: 0}
   orientation: {fileID: 6928650095455828283}
   player: {fileID: 6928650094532053178}
   crosshair: {fileID: 6928650094528532856}

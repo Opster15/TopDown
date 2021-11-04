@@ -15,8 +15,8 @@ MonoBehaviour:
   bullet: {fileID: 4367198873673462112, guid: 6583fe52fa5020d429c52e6068207dbe, type: 3}
   shootForce: 20
   recoilForce: 400
-  timeBetweenShooting: 0.2
-  timeBetweenShots: 0.01
+  timeBetweenShooting: 0.15
+  timeBetweenShots: 0
   spread: 0.1
   magazineSize: 9999
   bulletsPerTap: 1

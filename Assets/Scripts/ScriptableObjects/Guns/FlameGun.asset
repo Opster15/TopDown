@@ -21,3 +21,4 @@ MonoBehaviour:
   magazineSize: 9999
   bulletsPerTap: 1
   allowButtonHold: 1
+  constantShooting: 0

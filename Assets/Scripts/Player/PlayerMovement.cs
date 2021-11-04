@@ -31,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
 
 
     //Input
-    float x, y;
+    public float x, y;
 
     void Awake()
     {
@@ -54,6 +54,11 @@ public class PlayerMovement : MonoBehaviour
         hatObject = playerStats.hatObject;
     }
 
+    public void BO3Reset()
+    {
+        player.position = resetPosition;
+    }
+
 
     private void FixedUpdate()
     {        
@@ -70,8 +75,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void MyInput()
     {
-        x = inputManager.m_movementInput.x;
-        y = inputManager.m_movementInput.y;
+        x = inputManager.m_movementInput.x * hatObject.movementMultiplier;
+        y = inputManager.m_movementInput.y * hatObject.movementMultiplier;
 
         if(x == 0 && y == 0)
         {
@@ -82,6 +87,7 @@ public class PlayerMovement : MonoBehaviour
             isMoving = true;
         }
     }
+
     /*
     public void Dash()
     {

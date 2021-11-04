@@ -19,6 +19,8 @@ public class PlayerStats : MonoBehaviour
 
     private bool inZone;
 
+    public bool isP1;
+
 
     public void Awake()
     {
@@ -52,6 +54,12 @@ public class PlayerStats : MonoBehaviour
         transform.localScale = hatObject.playerScale;
     }
 
+    public void BO3Reset()
+    {
+        currentHealth = hatObject.maxHealth;
+        transform.localScale = hatObject.playerScale;
+    }
+
     void Update()
     {
         if (inputManager.spacePressed)
@@ -61,7 +69,7 @@ public class PlayerStats : MonoBehaviour
 
         if(currentHealth <= 0)
         {
-            manager.Reset();
+            manager.Reset(isP1);
             currentHealth = hatObject.maxHealth;
         }
 

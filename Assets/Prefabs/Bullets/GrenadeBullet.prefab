@@ -133,14 +133,17 @@ MonoBehaviour:
   whatIsPlayers:
     serializedVersion: 2
     m_Bits: 256
-  bounciness: 0.5
+  manager: {fileID: 0}
+  bounciness: 1
   useGravity: 1
   explosionDamage: 20
   explosionRange: 1.5
   explosionForce: 10000
   maxLifetime: 2
+  shootForce: 0
   mass: 1
   doesCollide: 1
+  followingCursor: 0
   maxCollisions: 10
   explodeOnTouch: 1
   random: 0

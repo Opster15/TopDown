@@ -50,6 +50,8 @@ public class Bullet : MonoBehaviour
 
     private void Update()
     {
+
+
         //When to explode:
         if (collisions > maxCollisions) Explode();
 
@@ -100,15 +102,14 @@ public class Bullet : MonoBehaviour
         //Don't count collisions with other bullets
         //if (collision.GetComponent<Collider>().CompareTag("Bullet")) return;
 
-        if (doesCollide == true)
-        {
-            collisions++;
-        }
+
+        collisions++;
+        
         
         if (collision.collider.CompareTag("Enemy") && explodeOnTouch) Explode();
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnColliderEnter(Collider other)
     {
         if (other.CompareTag("Shield") && explodeOnTouch) Delay();
     }

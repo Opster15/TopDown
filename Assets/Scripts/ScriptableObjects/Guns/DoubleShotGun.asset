@@ -17,7 +17,8 @@ MonoBehaviour:
   recoilForce: 0
   timeBetweenShooting: 1
   timeBetweenShots: 0.01
-  spread: 0.3
+  spread: 0.1
   magazineSize: 9999
   bulletsPerTap: 2
   allowButtonHold: 0
+  constantShooting: 0

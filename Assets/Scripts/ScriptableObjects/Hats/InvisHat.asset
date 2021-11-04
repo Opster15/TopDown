@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: InvisHat
   m_EditorClassIdentifier: 
   maxHealth: 100
+  movementMultiplier: 1
   moveSpeed: 25000
   maxSpeed: 12
   dashCooldown: 3

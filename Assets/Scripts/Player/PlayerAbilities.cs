@@ -34,6 +34,7 @@ public class PlayerAbilities : MonoBehaviour
     public void Reset()
     {
         hatObject = playerStats.hatObject;
+
     }
 
     void CheckCooldowns()
