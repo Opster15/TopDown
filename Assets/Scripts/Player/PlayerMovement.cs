@@ -27,11 +27,11 @@ public class PlayerMovement : MonoBehaviour
     private float maxSlopeAngle = 35f;
     public float counterMovement;
 
-    public bool isMoving;
+    bool isMoving;
 
 
     //Input
-    public float x, y;
+    float x, y;
 
     void Awake()
     {

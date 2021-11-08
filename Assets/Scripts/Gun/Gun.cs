@@ -102,6 +102,8 @@ public class Gun : MonoBehaviour
 
         currentBullet.GetComponent<Rigidbody>().AddForce(direction * gunObject.shootForce, ForceMode.Impulse);
 
+
+
         //GameObject flash = (GameObject)Instantiate(muzzleFlash, attackPoint.position, Quaternion.identity);
         //Destroy(flash, 1.0f);
 
@@ -120,7 +122,11 @@ public class Gun : MonoBehaviour
         //if more than one bulletsPerTap make sure to repeat shoot function
         if (bulletsShot < gunObject.bulletsPerTap && bulletsLeft > 0)
             Invoke("Shoot", gunObject.timeBetweenShots);
-        
+        if (gunObject.randomBullet)
+        {
+            random2 = Random.Range(0, bulletObjects.Length);
+            bullet = bulletObjects[random2];
+        }
     }
     private void ResetShot()
     {

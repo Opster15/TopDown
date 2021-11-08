@@ -135,6 +135,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 83ec87bfab504ca4f84225bfaac4aa06, type: 2}
   - {fileID: 11400000, guid: 452add1c1deb53748ab5386a9ad6ce3e, type: 2}
   - {fileID: 11400000, guid: 8357d0af4c7aa364baeca46ef4d2196c, type: 2}
+  - {fileID: 11400000, guid: c52d9e24c1f0a3442a2386d570dbaf7d, type: 2}
+  - {fileID: 11400000, guid: 7c257575fe2352f40ba1db484fe8d037, type: 2}
   gunObject: {fileID: 11400000, guid: 8d60780707532f34bbba865c8f9c1c14, type: 2}
   bulletObjects:
   - {fileID: 4367198873673462112, guid: 6583fe52fa5020d429c52e6068207dbe, type: 3}
@@ -144,7 +146,7 @@ MonoBehaviour:
   - {fileID: 4367198873673462112, guid: 4b07b534c7ecd1449bfedc2853e55910, type: 3}
   - {fileID: 4367198873673462112, guid: 462537561e66b0e418c372136ecb02e7, type: 3}
   - {fileID: 4367198873673462112, guid: aae88e434e1f0e8438173479149610de, type: 3}
-  - {fileID: 4367198873673462112, guid: 577d46ed221316442a49c1d25dbe8fdd, type: 3}
+  - {fileID: 4367198873673462112, guid: 505e945c38a9814409d3294b1ba343c9, type: 3}
   bullet: {fileID: 4367198873673462112, guid: 1f7f0365cd24e4149a1832e7481e3bbf, type: 3}
   player: {fileID: 6928650094532053178}
   shooting: 0
@@ -398,13 +400,17 @@ MonoBehaviour:
   hatObjects:
   - {fileID: 11400000, guid: 6c55cee322d9770439c4b0287d2af7ac, type: 2}
   - {fileID: 11400000, guid: 1d527997dbe53f24ca2bfd5fbb0b8256, type: 2}
+  - {fileID: 11400000, guid: 62237081e08f79448a2e6e303eb085b9, type: 2}
   - {fileID: 11400000, guid: c866ab0b556250448821210c7b32695c, type: 2}
-  - {fileID: 11400000, guid: 71160e2c85f35454f82b41515c581083, type: 2}
   - {fileID: 11400000, guid: d6d134c98ebcfe944b4c0bc12e638e30, type: 2}
+  - {fileID: 11400000, guid: f5f5d016137142e469ba253aae1338d9, type: 2}
   - {fileID: 11400000, guid: 711bc116e35886a4a89a570ba074fe5a, type: 2}
+  - {fileID: 11400000, guid: 71160e2c85f35454f82b41515c581083, type: 2}
+  - {fileID: 11400000, guid: e0e1dd6fe4fc15044a159c56677c2224, type: 2}
   hatObject: {fileID: 0}
   currentHealth: 0
   hatHolder: {fileID: 6928650095400215661}
+  isP1: 1
 --- !u!114 &6928650094532053176
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -425,7 +431,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   counterMovement: 0.8
-  isMoving: 0
 --- !u!114 &6928650094532053177
 MonoBehaviour:
   m_ObjectHideFlags: 0

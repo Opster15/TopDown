@@ -15,6 +15,6 @@ public class GunObject : ScriptableObject
     //Gun stats
     public float timeBetweenShooting, timeBetweenShots,spread;
     public int magazineSize, bulletsPerTap;
-    public bool allowButtonHold, constantShooting;
+    public bool allowButtonHold, constantShooting,randomBullet;
 
 }

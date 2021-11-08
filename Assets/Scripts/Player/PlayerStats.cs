@@ -62,11 +62,12 @@ public class PlayerStats : MonoBehaviour
 
     void Update()
     {
+        /*
         if (inputManager.spacePressed)
         {
             TakeDamage(150);
         }
-
+        */
         if(currentHealth <= 0)
         {
             manager.Reset(isP1);

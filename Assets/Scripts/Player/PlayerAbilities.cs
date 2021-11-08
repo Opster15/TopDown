@@ -8,18 +8,21 @@ public class PlayerAbilities : MonoBehaviour
     public HatObject hatObject;
     public Gun gun;
     public PlayerStats playerStats;
+    Manager manager;
 
     public MeshRenderer mesh;
     public GameObject bubbleShield;
 
     InputManager inputManager;
 
+    GameObject[] bullets;
 
     private float nextAbilityTime;
 
     void Start()
     {
         hatObject = playerStats.hatObject;
+        manager = FindObjectOfType<Manager>();
         GetComponent<MeshRenderer>();
         inputManager = FindObjectOfType<InputManager>();
     }
@@ -70,6 +73,30 @@ public class PlayerAbilities : MonoBehaviour
                     }
                 }
                     break;
+            case 3:
+                if(Time.time > nextAbilityTime)
+                {
+                    if (inputManager.Interact)
+                    {
+                        bullets = GameObject.FindGameObjectsWithTag("Bullet");
+                        for (int i = 0; i < bullets.Length; i++)
+                        {
+                            Destroy(bullets[i].gameObject);
+                        }
+                        nextAbilityTime = Time.time + hatObject.abilityCooldown;
+                    }
+                }
+                break;
+            case 4:
+                if(Time.time > nextAbilityTime)
+                {
+                    if (inputManager.Interact)
+                    {
+                        transform.position = manager.cursor.transform.position;
+                        nextAbilityTime = Time.time + hatObject.abilityCooldown;
+                    }
+                }
+                break;
 
         }
             

@@ -18,10 +18,11 @@ public class HatObject : ScriptableObject
     public float abilityCooldown,abilityDuration;
 
     public int abilityNumber;
-
     #region
     //0 is no ability
     //1 is Invis
     //2 is Bubble Shield
+    //3 is BulletDestroyer
+    //4 is teleport
     #endregion
 }

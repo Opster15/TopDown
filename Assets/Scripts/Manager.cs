@@ -19,7 +19,7 @@ public class Manager : MonoBehaviour
 
     public Vector3 resetPosition;
     public int gameMode;
-    int p1 ,p2;
+    int p1,p2;
     
     #region gamemodes
     //1 is arcade(BO1)

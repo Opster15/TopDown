@@ -139,7 +139,7 @@ MonoBehaviour:
   explosionDamage: 15
   explosionRange: 0.7
   explosionForce: 0
-  maxLifetime: 3
+  maxLifetime: 1
   shootForce: 0
   mass: 0.5
   doesCollide: 1
