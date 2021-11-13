@@ -9,6 +9,7 @@ TagManager:
   - DeathCube
   - Shield
   - Wall
+  - Door
   layers:
   - Default
   - TransparentFX
