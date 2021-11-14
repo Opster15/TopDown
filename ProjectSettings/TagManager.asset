@@ -9,7 +9,8 @@ TagManager:
   - DeathCube
   - Shield
   - Wall
-  - Door
+  - SpawnPoint
+  - Rooms
   layers:
   - Default
   - TransparentFX
