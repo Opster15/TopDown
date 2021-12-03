@@ -139,14 +139,14 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7c257575fe2352f40ba1db484fe8d037, type: 2}
   gunObject: {fileID: 11400000, guid: 8d60780707532f34bbba865c8f9c1c14, type: 2}
   bulletObjects:
-  - {fileID: 4367198873673462112, guid: 6583fe52fa5020d429c52e6068207dbe, type: 3}
-  - {fileID: 4367198873673462112, guid: ab8212984ec3f7645929d470ed7fd831, type: 3}
-  - {fileID: 4367198873673462112, guid: 1f7f0365cd24e4149a1832e7481e3bbf, type: 3}
-  - {fileID: 4367198873673462112, guid: eca4a72ef4c16994bb13499b050a74b6, type: 3}
-  - {fileID: 4367198873673462112, guid: 4b07b534c7ecd1449bfedc2853e55910, type: 3}
-  - {fileID: 4367198873673462112, guid: 462537561e66b0e418c372136ecb02e7, type: 3}
-  - {fileID: 4367198873673462112, guid: aae88e434e1f0e8438173479149610de, type: 3}
-  - {fileID: 4367198873673462112, guid: 505e945c38a9814409d3294b1ba343c9, type: 3}
+  - {fileID: 4367198873673462112, guid: 6c68ae17af78f8b4cb1b48a450cb4223, type: 3}
+  - {fileID: 4367198873673462112, guid: d480787fe8eb44341a422db480061f6f, type: 3}
+  - {fileID: 4367198873673462112, guid: af102891baebef54bbb65af0ec647ad9, type: 3}
+  - {fileID: 4367198873673462112, guid: 8afe4432bba0e0d40a729f4cb7c5299f, type: 3}
+  - {fileID: 4367198873673462112, guid: 029c2be41a654fc4e81eadc8f2200dc2, type: 3}
+  - {fileID: 4367198873673462112, guid: 64cced189433a3c488f96cf33efebc03, type: 3}
+  - {fileID: 4367198873673462112, guid: 71ec0eb4fb6b75c4385049f4799652c0, type: 3}
+  - {fileID: 4367198873673462112, guid: 9a701075e5a452943ba3cadc6e2c2c60, type: 3}
   bullet: {fileID: 4367198873673462112, guid: 1f7f0365cd24e4149a1832e7481e3bbf, type: 3}
   player: {fileID: 6928650094532053178}
   shooting: 0
@@ -161,7 +161,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6928650094429526332}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: PlayerHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -283,7 +283,7 @@ GameObject:
   - component: {fileID: 6928650094532053831}
   - component: {fileID: 6928650094532053176}
   - component: {fileID: 6928650094532053177}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -410,7 +410,7 @@ MonoBehaviour:
   hatObject: {fileID: 0}
   currentHealth: 0
   hatHolder: {fileID: 6928650095400215661}
-  isP1: 1
+  isP1: 0
 --- !u!114 &6928650094532053176
 MonoBehaviour:
   m_ObjectHideFlags: 0
